@@ -7,6 +7,7 @@ const secrets = require("./secrets.json");
 dead.on('ready', () => {
     var channel = dead.channels.get('500438046630608920');
     console.log("ready bois!");
+    dead.user.setActivity("the zombies", {type: 'WATCHING'});
     channel.send("bot online");
 });
 
