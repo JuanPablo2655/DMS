@@ -1,0 +1,22 @@
+{
+  "name": "dms",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dead.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JuanPablo2655/DMS.git"
+  },
+  "author": "Juan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JuanPablo2655/DMS/issues"
+  },
+  "homepage": "https://github.com/JuanPablo2655/DMS#readme",
+  "dependencies": {
+    "discord.js": "^11.4.2"
+  }
+}
