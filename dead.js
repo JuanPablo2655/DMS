@@ -115,31 +115,47 @@ dead.on('message', (message) => {
     }
 
     if (command === "food") {
-        let food = Math.floor(Math.random() *250 +50);
-        message.channel.send("Your community has " + food + " food items.");
-    }
-
-    if (command === "supplies") {
-        let supplies = Math.floor(Math.random() *250 +50);
-        message.channel.send("Your Community has" + supplies + "supplies.");
-    }
-
-    if (command === "test") {
-        let small = Math.floor(Math.random() *50 +10);
-        let medium = Math.floor(Math.random() *100 +20);
-        let large = Math.floor(Math.random() *250+50);
-        //message.channel.send(`${small} + ${medium} + ${large}`);
+        let small = Math.floor(Math.random() *100 +50);
+        let medium = Math.floor(Math.random() *250 +100);
+        let large = Math.floor(Math.random() *500 +200);
+        if (!args[0]) {
+            message.channel.send("please choose one of these choices `small` `medium` `large`");
+        }
         if (args[0] === "small") {
-            message.channel.send("Your small community has " + small + " people");
+            message.channel.send("Your small community has " + small + " food items");
         }
 
         if (args[0] === "medium") {
-            message.channel.send("Your medium community has " + medium + " people");
+            message.channel.send("Your medium community has " + medium + " food items");
         }
 
         if (args[0] === "large") {
-            message.channel.send("Your large community has " + large + " people");
+            message.channel.send("Your large community has " + large + " food items");
         }
+    }
+
+    if (command === "supplies") {
+        let small = Math.floor(Math.random() *150 +50);
+        let medium = Math.floor(Math.random() *300 +100);
+        let large = Math.floor(Math.random() *650 +200);
+        if (!args[0]) {
+            message.channel.send("please choose one of these choices `small` `medium` `large`");
+        }
+        if (args[0] === "small") {
+            message.channel.send("Your small community has " + small + " supplies");
+        }
+
+        if (args[0] === "medium") {
+            message.channel.send("Your medium community has " + medium + " supplies");
+        }
+
+        if (args[0] === "large") {
+            message.channel.send("Your large community has " + large + " supplies");
+        }
+    }
+
+    if (command === "test") {
+        message.channel.send("John big gay if he reads this.");
     }
 });
 
