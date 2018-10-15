@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const dead = new Discord.Client;
+const dead = new Discord.Client();
 
 const config = require("./config.json");
 const secrets = require("./secrets.json");
@@ -9,6 +9,14 @@ dead.on('ready', () => {
     console.log("ready bois!");
     dead.user.setActivity("the zombies", {type: 'WATCHING'});
     channel.send("bot online");
+});
+
+dead.on('guildMemberAdd', member => {
+    let guild = member.guild;
+    const welcome = new Discord.RichEmbed()
+        .setTitle(`Welcome to ${guild}, ${member.displayName}!`)
+        .setAuthor(`${member.displayName}`, `${member.displayAvatarURL}`)
+    dead.channels.get("480894974464884736").sendEmbed(welcome)
 });
 
 dead.on('message', (message) => {
@@ -67,6 +75,71 @@ dead.on('message', (message) => {
             'large gang',
         ];
         message.channel.send(`${intruder[~~(Math.random() * intruder.length)]}`);
+    }
+
+    if (command === "reboot") {
+        if(message.author.id !== config.devs) return;
+        process.exit(1);
+    };
+
+    if (command === "ping") {
+        message.channel.send(`${dead.ping}`);
+    };
+
+    if (command === "welcome") {
+        if(message.author.id !== config.ownerID) return;
+        const yeet = new Discord.RichEmbed()
+            .setTitle("Welcome to Dead Man Standing verifcation system!");
+            //.addField("Welcome to Dead Man Standing verifcation system", "test")
+        message.channel.send({yeet});
+    }
+
+    if (command === "people") {
+        let small = Math.floor(Math.random() *50 +10);
+        let medium = Math.floor(Math.random() *100 +20);
+        let large = Math.floor(Math.random() *250+50);
+        if (!args[0]) {
+            message.channel.send("please choose one of these choices `small` `medium` `large`");
+        }
+        if (args[0] === "small") {
+            message.channel.send("Your small community has " + small + " people");
+        }
+
+        if (args[0] === "medium") {
+            message.channel.send("Your medium community has " + medium + " people");
+        }
+
+        if (args[0] === "large") {
+            message.channel.send("Your large community has " + large + " people");
+        }
+    }
+
+    if (command === "food") {
+        let food = Math.floor(Math.random() *250 +50);
+        message.channel.send("Your community has " + food + " food items.");
+    }
+
+    if (command === "supplies") {
+        let supplies = Math.floor(Math.random() *250 +50);
+        message.channel.send("Your Community has" + supplies + "supplies.");
+    }
+
+    if (command === "test") {
+        let small = Math.floor(Math.random() *50 +10);
+        let medium = Math.floor(Math.random() *100 +20);
+        let large = Math.floor(Math.random() *250+50);
+        //message.channel.send(`${small} + ${medium} + ${large}`);
+        if (args[0] === "small") {
+            message.channel.send("Your small community has " + small + " people");
+        }
+
+        if (args[0] === "medium") {
+            message.channel.send("Your medium community has " + medium + " people");
+        }
+
+        if (args[0] === "large") {
+            message.channel.send("Your large community has " + large + " people");
+        }
     }
 });
 
