@@ -1,0 +1,13 @@
+const Discord = require("discord.js");
+
+module.exports.run = async (dead, message, args) => {
+    const answers = [
+        '1',
+        '2',
+        '3',
+        '4',
+        '5'
+    ];
+
+    message.channel.send(`${answers[~~(Math.random() * answers.length)]}`);
+}
