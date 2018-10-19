@@ -1,8 +1,0 @@
-{
-    "Help": {
-        "name":"Help",
-        "cat":"test",
-        "desc":"Displays help menu",
-        "usage":"help [group/command]"
-    }
-}

@@ -8,8 +8,6 @@ const fs = require('fs');
 const config = require("./config.json");
 const secrets = require("./secrets.json");
 
-const commands = JSON.parse(fs.readFileSync('storage/commands.json', 'utf8'));
-
 dead.on('ready', () => {
     var channel = dead.channels.get('500438046630608920');
     console.log("ready bois!");
