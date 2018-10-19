@@ -44,14 +44,6 @@ dead.on('message', (message) => {
       } catch (err) {
             console.log(err)
       }
-
-    // if (command === "profile") {
-    //     message.channel.send("Soon:tm:");
-    // }
-
-    // if (command === "test") {
-    //     message.channel.send("John big gay if he reads this.");
-    // }
 });
 
 dead.login(secrets.token);
