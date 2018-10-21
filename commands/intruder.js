@@ -8,3 +8,13 @@ module.exports.run = async (dead, message, args) => {
     ];
     message.channel.send(`${intruder[~~(Math.random() * intruder.length)]}`);
 }
+
+exports.conf = {
+    aliases: []
+}
+
+exports.help = {
+    name: "Intruder",
+    description: "determine intruder size.",
+    usage: "intruder"
+}

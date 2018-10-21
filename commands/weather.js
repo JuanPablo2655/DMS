@@ -9,3 +9,13 @@ module.exports.run = async (dead, message, args) => {
     ];
     message.channel.send(`${weather[~~(Math.random() * weather.length)]}`);
 }
+
+exports.conf = {
+    aliases: []
+}
+
+exports.help = {
+    name: "Weather",
+    description: "determine weather.",
+    usage: "weather"
+}

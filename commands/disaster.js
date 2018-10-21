@@ -9,3 +9,13 @@ module.exports.run = async (dead, message, args) => {
     ];
     message.channel.send(`${disaster[~~(Math.random() * disaster.length)]}`);
 }
+
+exports.conf = {
+    aliases: []
+}
+
+exports.help = {
+    name: "Disaster",
+    description: "Determins disasters",
+    usage: "disaster"
+}

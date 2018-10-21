@@ -18,3 +18,13 @@ module.exports.run = async (dead, message, args) => {
         message.channel.send(`\`\`\`js\n${e}\n\`\`\``);
     }
 }
+
+exports.conf = {
+    aliases: []
+}
+
+exports.help = {
+    name: "Eval",
+    description: "Danger bois",
+    usage: "eval [code]"
+}
