@@ -1,5 +1,4 @@
 const Discord = require("discord.js");
-
 module.exports.run = async (dead, message, args) => {
     let small = Math.floor(Math.random() *50 +10);
         let medium = Math.floor(Math.random() *100 +20);
@@ -18,4 +17,14 @@ module.exports.run = async (dead, message, args) => {
         if (args[0] === "large") {
             message.channel.send("Your large community has " + large + " people");
         }
+}
+
+exports.conf = {
+    aliases: []
+}
+
+exports.help = {
+    name: "People",
+    description: "determine population size.",
+    usage: "people [small|medium|large]"
 }

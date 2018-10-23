@@ -19,3 +19,11 @@ module.exports.run = async (dead, message, args) => {
             message.channel.send("Your large community has " + large + " supplies");
         }
 }
+
+exports.conf = {
+    aliases: ['supplies']
+}
+
+exports.help = {
+    name: "Supplies"
+}

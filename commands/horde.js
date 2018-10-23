@@ -10,3 +10,13 @@ module.exports.run = async (dead, message, args) => {
     ];
     message.channel.send(`${horde[~~(Math.random() * horde.length)]}`);
 }
+
+exports.conf = {
+    aliases: ['horde']
+}
+
+exports.help = {
+    name: "Horde",
+    description: "determine horde size.",
+    usage: "horde"
+}

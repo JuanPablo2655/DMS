@@ -19,3 +19,13 @@ module.exports.run = async (dead, message, args) => {
             message.channel.send("Your large community has " + large + " food items");
         }
 }
+
+exports.conf = {
+    aliases: ['food']
+}
+
+exports.help = {
+    name: "Food",
+    description: "determine food amount.",
+    usage: "food [small|medium|large]"
+}

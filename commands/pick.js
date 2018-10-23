@@ -11,3 +11,13 @@ module.exports.run = async (dead, message, args) => {
 
     message.channel.send(`${answers[~~(Math.random() * answers.length)]}`);
 }
+
+exports.conf = {
+    aliases: ['choose', 'pick']
+}
+
+exports.help = {
+    name: "Pick",
+    description: "picks someone.",
+    usage: "pick"
+}
