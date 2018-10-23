@@ -13,7 +13,7 @@ module.exports.run = async (dead, message, args) => {
 }
 
 exports.conf = {
-    aliases: []
+    aliases: ['choose', 'pick']
 }
 
 exports.help = {

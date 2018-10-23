@@ -21,7 +21,7 @@ module.exports.run = async (dead, message, args) => {
 }
 
 exports.conf = {
-    aliases: []
+    aliases: ['food']
 }
 
 exports.help = {

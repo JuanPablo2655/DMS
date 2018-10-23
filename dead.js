@@ -41,10 +41,16 @@ dead.on('message', (message) => {
     const command = args.shift().toLowerCase();
 
     let cmd;
-	if (dead.commands.has(command)) {
-		cmd = dead.commands.get(command);
-	} else if (dead.aliases.has(command)) {
+	// if (dead.commands.has(command)) {
+	// 	cmd = dead.commands.get(command);
+	// } else if (dead.aliases.has(command)) {
+	// 	cmd = dead.commands.get(dead.aliases.get(command));
+	// }
+
+	if (dead.aliases.has(command)) {
 		cmd = dead.commands.get(dead.aliases.get(command));
+	} else if (dead.commands.has(command)) {
+		cmd = dead.commands.get(command);
 	}
 	cmd.run(dead, message, args);
 });

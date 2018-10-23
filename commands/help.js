@@ -1,15 +1,15 @@
 const Discord = require("discord.js");
 
-exports.run = async (dead, message, args) => {
+module.exports.run = async (dead, message, args) => {
     try {
-        await message.channel.send(`Commands: \n\n${dead.commands.map(cmd => `\`${cmd.help.name}\``).join(", ")}`);
+        await message.channel.send(`Commands: \n\n${dead.commands.map(cmd => `\`${cmd.help.name}\``).join(",\n ")}`);
     } catch (e) {
         throw e;
     }
 }
 
 exports.conf = {
-    aliases: []
+    aliases: ['help']
 }
 
 exports.help = {

@@ -1,5 +1,4 @@
 const Discord = require("discord.js");
-
 module.exports.run = async (dead, message, args) => {
     let small = Math.floor(Math.random() *50 +10);
         let medium = Math.floor(Math.random() *100 +20);

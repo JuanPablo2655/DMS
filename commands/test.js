@@ -5,7 +5,7 @@ module.exports.run = async (dead, message, args) => {
 }
 
 exports.conf = {
-    aliases: []
+    aliases: ['test']
 }
 
 exports.help = {

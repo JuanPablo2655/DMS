@@ -6,7 +6,7 @@ module.exports.run = async (dead, message, args) => {
 }
 
 exports.conf = {
-    aliases: []
+    aliases: ['reboot']
 }
 
 exports.help = {
