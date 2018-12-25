@@ -9,7 +9,7 @@ exports.conf = {
 }
 
 exports.help = {
-    name: "Ping",
+    name: "ping",
     description: "ping pong.",
     usage: "ping"
 }

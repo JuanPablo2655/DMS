@@ -17,7 +17,7 @@ exports.conf = {
 }
 
 exports.help = {
-    name: "Pick",
+    name: "pick",
     description: "picks someone.",
     usage: "pick"
 }

@@ -14,7 +14,7 @@ exports.conf = {
 }
 
 exports.help = {
-    name: "Intruder",
+    name: "intruder",
     description: "determine intruder size.",
     usage: "intruder"
 }

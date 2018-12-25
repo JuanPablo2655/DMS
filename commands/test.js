@@ -9,7 +9,7 @@ exports.conf = {
 }
 
 exports.help = {
-    name: "Test",
+    name: "test",
     description: "test.",
     usage: "test"
 }

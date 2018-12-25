@@ -16,7 +16,7 @@ exports.conf = {
 }
 
 exports.help = {
-    name: "Horde",
+    name: "horde",
     description: "determine horde size.",
     usage: "horde"
 }

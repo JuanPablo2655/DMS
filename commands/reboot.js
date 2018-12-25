@@ -1,8 +1,8 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (dead, message, args) => {
-    if(message.author.id !== config.devs) return;
-        process.exit(1);
+    if (message.author.id !== config.devs) return;
+    process.exit(1);
 }
 
 exports.conf = {
@@ -10,7 +10,7 @@ exports.conf = {
 }
 
 exports.help = {
-    name: "Reboot",
+    name: "reboot",
     description: "restarts bot.",
     usage: "reboot"
 }

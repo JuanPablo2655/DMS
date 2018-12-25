@@ -1,13 +1,26 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (dead, message, args) => {
-    const disaster = [
+    const summer = [
         'flood',
         'tornado',
         'earthquake',
         'wild fires',
     ];
-    message.channel.send(`${disaster[~~(Math.random() * disaster.length)]}`);
+
+    const winter = [
+        'Blizzard',
+        'High wind',
+        'Ice',
+    ]
+
+    if (!args[0]) {
+        message.channel.send("please choose `summer` `winter`");
+    } else if (args[0] === "summer") {
+        message.channel.send(`${summer[~~(Math.random() * summer.length)]}`);
+    } else if (args[0] === "winter") {
+        message.channel.send(`${winter[~~(Math.random() * winter.length)]}`);
+    }
 }
 
 exports.conf = {
@@ -15,7 +28,7 @@ exports.conf = {
 }
 
 exports.help = {
-    name: "Disaster",
+    name: "disaster",
     description: "Determins disasters",
     usage: "disaster"
 }

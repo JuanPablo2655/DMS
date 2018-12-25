@@ -9,7 +9,7 @@ exports.conf = {
 }
 
 exports.help = {
-    name: "Profile",
+    name: "profile",
     description: "profile of each community.",
     usage: "profile [name]"
 }
