@@ -13,45 +13,42 @@ dead.commands = new Discord.Collection();
 dead.aliases = new Discord.Collection();
 
 dead.on('ready', () => {
-    var channel = dead.channels.get('500438046630608920');
-    console.log("ready bois!");
-    dead.user.setActivity("the zombies", {type: 'WATCHING'});
-    channel.send("bot online");
+	var channel = dead.channels.get('500438046630608920');
+	console.log("ready bois!");
+	dead.user.setActivity("the zombies", {
+		type: 'WATCHING'
+	});
+	channel.send("bot online");
 });
 
 dead.on('guildMemberAdd', member => {
-    const welcomeChannel = member.guild.channels.find('name', 'welcome');
-  if (welcomeChannel) {
-     let WelcomeEmbed = new Discord.RichEmbed()
-    .setTitle("Member has joined!")
-    .setThumbnail(member.user.displayAvatarURL)
-    .setDescription(`Welcome ${member.user} to ${member.guild.name}, \nPlease follow the rules \n and I hope you enjoy your stay here!`)
-    .setColor("#4286f4")
-    .setFooter(`You are the ${member.guild.memberCount} member to joined.`)
-    .setTimestamp();
-    welcomeChannel.send(WelcomeEmbed);
-  }
+	const welcomeChannel = member.guild.channels.find('name', 'welcome');
+	if (welcomeChannel) {
+		let WelcomeEmbed = new Discord.RichEmbed()
+			.setTitle("Member has joined!")
+			.setThumbnail(member.user.displayAvatarURL)
+			.setDescription(`Welcome ${member.user} to ${member.guild.name}, \nPlease follow the rules \n and I hope you enjoy your stay here!`)
+			.setColor("#4286f4")
+			.setFooter(`You are the ${member.guild.memberCount} member to joined.`)
+			.setTimestamp();
+		welcomeChannel.send(WelcomeEmbed);
+	}
 });
 
 dead.on('message', (message) => {
-    if (message.author.bot) return;
-    if (message.content.indexOf(config.prefix) !== 0) return;
+	if (message.author.bot) return;
+	if (message.content.indexOf(config.prefix) !== 0) return;
 
-    const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
-    const command = args.shift().toLowerCase();
+	const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
+	const command = args.shift().toLowerCase();
 
-    let cmd;
-	// if (dead.commands.has(command)) {
-	// 	cmd = dead.commands.get(command);
-	// } else if (dead.aliases.has(command)) {
-	// 	cmd = dead.commands.get(dead.aliases.get(command));
-	// }
-
+	let cmd;
 	if (dead.aliases.has(command)) {
 		cmd = dead.commands.get(dead.aliases.get(command));
 	} else if (dead.commands.has(command)) {
 		cmd = dead.commands.get(command);
 	}
+	return false;
 	cmd.run(dead, message, args);
 });
 
